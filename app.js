@@ -10,11 +10,10 @@ app.get('/',(request, response) => response.render('index'));
 
 app.get('/clases', function (request, response){response.render('clases')});
 app.get('/armas', function (request, response){response.render('armas')});
-app.get('/victimas', function(request, response){response.render('victimas')});
 app.get('/404', function(request, response){response.render('404')});
 
 app.get('/victimas', function(request, response){
-    var ip = ['198.160.0.0.0'];
+    var ip = ['::1'];
     var ip_user = request.connection.remoteAddress;
     if(ip.indexOf(ip_user) >= 0){
         response.render("404");
